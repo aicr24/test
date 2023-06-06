@@ -16,6 +16,16 @@ void imprimirNotas(int *arr, int n) {
     }
 }
 
+double obtenerPromedio(int *arr, int n) {
+    double prom;
+    double sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    prom = sum / n;
+    return prom;
+}
+
 int main(void) {
     int notas;
     cout << "Ingrese la cantidad maxima de notas: ";
@@ -25,6 +35,10 @@ int main(void) {
     int arr_notas[notas];
     llenarNotas(arr_notas, notas);
     imprimirNotas(arr_notas, notas);
+
+    // Ahora hallaremos el promedio de notas
+    double prom = obtenerPromedio(arr_notas, notas);
+    cout << "El promedio de las notas ingresadas es: " << prom << endl;
 
     return 0;
 }
